@@ -6,6 +6,7 @@ import { ResultScreenComponent } from './result-screen/result-screen.component';
 
 const routes: Routes = [
   {path: '', component: HomeScreenComponent},
+  {path: 'home-screen', component: HomeScreenComponent},
   {path: 'parameters-screen', component: ParametersScreenComponent},
   {path: 'result-screen', component: ResultScreenComponent}
 ];
