@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./result-screen.component.css']
 })
 export class ResultScreenComponent {
+  // constructor(
+  //   private location: Location
+  // ) {};
+
+  // endRoll = () => {
+  //   this.location.historyGo(-2);
+  // };
 
 }
