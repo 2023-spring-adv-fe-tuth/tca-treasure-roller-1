@@ -18,13 +18,6 @@ import { ParametersScreenComponent } from './parameters-screen/parameters-screen
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      [
-        {path: 'home-screen', component: HomeScreenComponent},
-        {path: 'parameters-screen', component: ParametersScreenComponent},
-        {path: 'result-screen', component: ResultScreenComponent}
-      ]
-    ),
     AppRoutingModule,
     NgbModule
   ],
