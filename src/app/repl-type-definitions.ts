@@ -27,7 +27,7 @@ const getPlayerNames: GetPlayer = (grs) => {
         ].sort();
 };
 
-const leaderboard: LeaderCalculator = (results) => {
+export const leaderboard: LeaderCalculator = (results) => {
 
     const grsByPlayer = getPlayerNames(results).reduce(
         (acc, x) => acc.set(
