@@ -63,7 +63,7 @@ export const addGameResult: AddGame = (results, result) => [
 ];
 
 export interface Loot {
-    name: string;
+    itemName: string;
     saleValue: number;
     notes: string;
-  };
+};
