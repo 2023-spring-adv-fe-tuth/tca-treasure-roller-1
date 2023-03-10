@@ -18,10 +18,12 @@ export type LeaderCalculator = (results: GameResult[]) => DisplayPlayer[];
 
 // add default implementations...
 
-const getPlayerNames: GetPlayer = (grs) => {
-    
+export const getPlayerNames: GetPlayer = (grs) => {
+    // flatMap gets all names of players, even repeats
     const previousPlayers = grs.flatMap(x => x.players);
     
+    // Set collects only the unique players
+    // .sort() lists alphabetically
     return [
         ...new Set(previousPlayers)
         ].sort();
@@ -55,7 +57,13 @@ export const leaderboard: LeaderCalculator = (results) => {
     }));
 };
 
-const addGameResult: AddGame = (results, result) => [
+export const addGameResult: AddGame = (results, result) => [
     ...results,
     result
 ];
+
+export interface Loot {
+    name: string;
+    saleValue: number;
+    notes: string;
+  };
