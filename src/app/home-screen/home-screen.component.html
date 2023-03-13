@@ -3,8 +3,26 @@
     routerLink="/parameters-screen">
     Roll New Treasure
 </button>
-<div class="card">
-  <div class="card-header">Treasure 1</div>
-  <div class="card-body">Stuff here...</div>
+<div id="fold">
+  <div class="card">
+    <div class="card-header">
+      <a class="btn" 
+        data-bs-toggle="collapse"
+        href="#treasureOne"
+      >
+        Treasure 1
+      </a>
+    </div>
+    <div 
+      class="collapse show" 
+      data-bs-parent="fold"
+      id="treasureOne"
+    >
+      <p class="card-body">
+        Treasure goes here...
+      </p>
+    </div>
+  </div>
 </div>
+
   
