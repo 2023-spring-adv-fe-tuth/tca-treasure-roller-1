@@ -30,9 +30,9 @@ export class TreasureSvcService {
   grs: GameResult[] = gameResults3;
 
   leaderboard = () => leaderboard(this.grs);
-}
 
-
+  rolledTreasure: Loot[] = treasureItems;
+};
 
 const treasureItems: Loot[] = [
   {
