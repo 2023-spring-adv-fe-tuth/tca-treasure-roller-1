@@ -1,5 +1,4 @@
-import { hoardSaleValuesOnly, fullHoardValue, hoardItemValuesOnly } from './../treasure-types';
-import { Loot, hoardItemValuesOnly } from './treasure-types';
+import { Loot, hoardSaleValuesOnly, fullHoardValue, hoardItemValuesOnly } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
   GameResult,
