@@ -1,4 +1,4 @@
-import { DisplayPlayer, RolledTreasure } from './../repl-type-definitions';
+import { DisplayPlayer } from './../repl-type-definitions';
 import { TreasureSvcService } from './../treasure-svc.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +14,6 @@ export class HomeScreenComponent implements OnInit {
   ) {}
 
   leaderData: DisplayPlayer[] = [];
-  treasureConsole: RolledTreasure[] = [];
 
   ngOnInit(): void {
     this.leaderData = this.gameSvc.leaderboard();
