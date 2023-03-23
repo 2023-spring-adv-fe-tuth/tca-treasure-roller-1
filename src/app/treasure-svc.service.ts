@@ -1,9 +1,8 @@
+import { Loot } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
   GameResult,
-  leaderboard,
-  Loot,
-  totalTreasureValue
+  leaderboard
 } from './repl-type-definitions';
 
 const gameResults3: GameResult[] = [
@@ -35,8 +34,6 @@ export class TreasureSvcService {
   rolledTreasure: Loot[] = treasureItems;
 
   rolledTreasure2: Loot[] = secondTreasure;
-
-  totalTreasureValue = () => totalTreasureValue(this.rolledTreasure);
 
   // displayTreasure = () => displayTreasure(this.rolledTreasure);
 };
