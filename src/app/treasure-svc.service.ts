@@ -1,4 +1,5 @@
-import { Loot } from './treasure-types';
+import { hoardSaleValuesOnly, fullHoardValue, hoardItemValuesOnly } from './../treasure-types';
+import { Loot, hoardItemValuesOnly } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
   GameResult,
@@ -35,7 +36,13 @@ export class TreasureSvcService {
 
   rolledTreasure2: Loot[] = secondTreasure;
 
-  // displayTreasure = () => displayTreasure(this.rolledTreasure);
+  hoardSaleValuesOnly = () => hoardSaleValuesOnly(this.rolledTreasure);
+  hoardItemValuesOnly = () => hoardItemValuesOnly(this.rolledTreasure);
+  fullHoardValue = () => fullHoardValue(this.rolledTreasure);
+
+//   hoardSaleValuesOnly = () => hoardSaleValuesOnly(this.rolledTreasure2);
+//   hoardItemValuesOnly = () => hoardItemValuesOnly(this.rolledTreasure2);
+//   fullHoardValue = () => fullHoardValue(this.rolledTreasure2);
 };
 
 const treasureItems: Loot[] = [
