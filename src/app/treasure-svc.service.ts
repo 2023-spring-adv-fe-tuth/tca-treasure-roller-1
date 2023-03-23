@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { 
   GameResult,
   leaderboard,
-  Loot
+  Loot,
+  totalTreasureValue
 } from './repl-type-definitions';
 
 const gameResults3: GameResult[] = [
@@ -32,11 +33,18 @@ export class TreasureSvcService {
   leaderboard = () => leaderboard(this.grs);
 
   rolledTreasure: Loot[] = treasureItems;
+
+  rolledTreasure2: Loot[] = secondTreasure;
+
+  totalTreasureValue = () => totalTreasureValue(this.rolledTreasure);
+
+  // displayTreasure = () => displayTreasure(this.rolledTreasure);
 };
 
 const treasureItems: Loot[] = [
   {
       itemName: "+1 Longsword",
+      itemValue: 2360,
       saleValue: 1180,
       notes: "+1 hit and damage"
   },
@@ -47,7 +55,7 @@ const treasureItems: Loot[] = [
   },
   {
       itemName: "123 Gold Coins",
-      saleValue: 150,
+      saleValue: 123,
       notes: "A pile of gold coins"
   },
   {
@@ -72,7 +80,8 @@ const treasureItems: Loot[] = [
   },
   {
       itemName: "Potion of Cure Light Wounds",
-      saleValue: 50,
+      itemValue: 50,
+      saleValue: 25,
       notes: "Drink to heal 1d8+1hp"
   },
   {
@@ -82,7 +91,8 @@ const treasureItems: Loot[] = [
   },
   {
       itemName: "Gauntlets of Ogre Power",
-      saleValue: 4000,
+      itemValue: 4000,
+      saleValue: 2000,
       notes: "+2 Strength probably won't make you as strong as an ogre, but at least you can carry a little more loot."
   },
   {
@@ -92,17 +102,62 @@ const treasureItems: Loot[] = [
   },
   {
       itemName: "Necklace of Fireballs",
-      saleValue: 7500,
+      itemValue: 7500,
+      saleValue: 3750,
       notes: "Brightly colored glass beads are warm to the touch. The brighter the color, the hotter the burst."
   },
   {
       itemName: "+2 Leather Jerkin",
-      saleValue: 2001.5,
+      itemValue: 4002,
+      saleValue: 2001,
       notes: "+2 AC, but why?"
   },
   {
       itemName: "Adamantine Full Plate",
-      saleValue: 8000,
+      itemValue: 16650,
+      saleValue: 8325,
       notes: "About as tough and ostentatious as you can get, but impossible to tailor."
   }
+];
+
+const secondTreasure: Loot[] = [
+    {
+        itemName: "Bracers of Dexterity +4",
+        itemValue: 16000,
+        saleValue: 8000,
+        notes: "wear these to be more nimble"
+    },
+    {
+        itemName: "Helm of Command",
+        itemValue: 32000,
+        saleValue: 16000,
+        notes: "Charisma bonuses and charm spells - can be very dangerous in the wrong hands"
+    },
+    {
+        itemName: "Gold idol",
+        saleValue: 1500,
+        notes: "A sculpture of some ancient, probably forgotten god; it's 30lbs of solid gold though"
+    },
+    {
+        itemName: "Oil painting on dragonhide",
+        saleValue: 4300,
+        notes: "You have to be bold or stupid to paint on dragonhide. Such a wholesome picture of a werewolf eating a family. Precious metal threads, mother-of-pearl, and a few semiprecious stones accentuate several details; ironic how the werewolf's body is highlighted in silver threads, but the moonstone eyes are spot-on."
+    },
+    {
+        itemName: "129 platinum coins",
+        saleValue: 1290,
+        notes: "Every coin was in a different spot. It's possible you could find more if you search longer."
+    },
+    {
+        itemName: "Bracers of Armor +4",
+        itemValue: 16000,
+        saleValue: 8000,
+        notes: "A thin barrier of force protects the wearer like light armor."
+    },
+    {
+        itemName: "Scroll of Bull Strength",
+        itemValue: 150,
+        saleValue: 75,
+        notes: "Many people find it helpful to keep scrolls of utilitiy spells such as this, saving their memory for more powerful spells."
+    }
 ];

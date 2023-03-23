@@ -16,8 +16,6 @@ export type AddGame = (results: GameResult[], result: GameResult) => GameResult[
 
 export type LeaderCalculator = (results: GameResult[]) => DisplayPlayer[];
 
-export type RolledTreasure = (rollResult: Loot[]) => string[];
-
 // add default implementations...
 
 export const getPlayerNames: GetPlayer = (grs) => {
@@ -63,20 +61,3 @@ export const addGameResult: AddGame = (results, result) => [
     ...results,
     result
 ];
-
-export interface Loot {
-    itemName: string;
-    saleValue: number;
-    notes: string;
-};
-
-export const displayTreasure: RolledTreasure = (treasureRoll) => {
-    const rolledItems = treasureRoll.map(x => x.itemName);
-   
-   return rolledItems;
-};
-
-export const totalTreasureValue = (treasureRoll: Loot[]) => 
-    treasureRoll.reduce(
-        (acc, x) => acc + x.saleValue, 0
-        );
