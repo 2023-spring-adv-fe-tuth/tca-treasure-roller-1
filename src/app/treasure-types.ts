@@ -15,12 +15,19 @@ export const getItemNames: GetLoot = (items) => {
 
 export interface Hoard {
     name: string;
+    timeStamp: string;
     budget?: number;
-    encounterLevel?: string;
+    encounterLevel?: number;
     items: Loot[];
     totalValue: number;
     totalSaleValue: number;
 };
+
+export interface HoardSetup {
+    name: string;
+    encounterLevel: number;
+    timeStamp: string;
+}
 
 export type GatherHoard = (treasures: Loot[], next: Loot) => Loot[];
 
@@ -32,7 +39,8 @@ export const hoardSaleValuesOnly = (items: Loot[]) => items.filter(
     );
 
 export const hoardItemValuesOnly = (items: Loot[]) => items.filter(
-    x => x.itemValue).reduce((acc, y) => acc + y.itemValue, 0);
+    x => x.itemValue).reduce((acc, y) => acc + (y.itemValue ?? 0 ), 0);
+    // null coalesce x ?? 0 adds 0 when undefined/null
 
 export const fullHoardValue = (items: Loot[]) => {
     const x = hoardSaleValuesOnly(items);

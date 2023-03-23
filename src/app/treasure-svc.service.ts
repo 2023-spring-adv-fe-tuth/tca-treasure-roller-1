@@ -1,4 +1,11 @@
-import { Loot, hoardSaleValuesOnly, fullHoardValue, hoardItemValuesOnly } from './treasure-types';
+import { sellWholeHoard } from './../treasure-types';
+import { 
+    Loot, 
+    hoardSaleValuesOnly, 
+    fullHoardValue, 
+    hoardItemValuesOnly, 
+    HoardSetup,
+    Hoard } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
   GameResult,
@@ -32,16 +39,16 @@ export class TreasureSvcService {
   leaderboard = () => leaderboard(this.grs);
 
   rolledTreasure: Loot[] = treasureItems;
+  
+  setupTest: HoardSetup = dummySetup;
 
-  rolledTreasure2: Loot[] = secondTreasure;
+  resultsTest: Hoard = dummyHoard;
 
   hoardSaleValuesOnly = () => hoardSaleValuesOnly(this.rolledTreasure);
   hoardItemValuesOnly = () => hoardItemValuesOnly(this.rolledTreasure);
   fullHoardValue = () => fullHoardValue(this.rolledTreasure);
+  sellWholeHoard = () => sellWholeHoard(this.rolledTreasure);
 
-//   hoardSaleValuesOnly = () => hoardSaleValuesOnly(this.rolledTreasure2);
-//   hoardItemValuesOnly = () => hoardItemValuesOnly(this.rolledTreasure2);
-//   fullHoardValue = () => fullHoardValue(this.rolledTreasure2);
 };
 
 const treasureItems: Loot[] = [
@@ -164,3 +171,18 @@ const secondTreasure: Loot[] = [
         notes: "Many people find it helpful to keep scrolls of utilitiy spells such as this, saving their memory for more powerful spells."
     }
 ];
+
+const dummySetup: HoardSetup = {
+    name: "Orc Camp",
+    encounterLevel: 9,
+    timeStamp: "3-23-2023"
+}
+
+const dummyHoard: Hoard = {
+    name: "Orc Camp",
+    timeStamp: "3-23-2023",
+    encounterLevel: 9,
+    items: secondTreasure,
+    totalValue: fullHoardValue(secondTreasure),
+    totalSaleValue: sellWholeHoard(secondTreasure)
+}
