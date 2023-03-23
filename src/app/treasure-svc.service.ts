@@ -1,11 +1,12 @@
-import { sellWholeHoard } from './../treasure-types';
 import { 
     Loot, 
     hoardSaleValuesOnly, 
     fullHoardValue, 
     hoardItemValuesOnly, 
     HoardSetup,
-    Hoard } from './treasure-types';
+    Hoard,
+    sellWholeHoard
+ } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
   GameResult,
