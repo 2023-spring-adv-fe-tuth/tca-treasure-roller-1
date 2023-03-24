@@ -52,5 +52,13 @@ export const sellWholeHoard = (items: Loot[]) => items.reduce(
     (acc, x) => acc + x.saleValue, 0
 );
 
+export const collectHistory: TreasureHistory = (encounters, encounter) => [
+    ...encounters,
+    encounter
+];
 
+export const initiateHistory = (x: Hoard, y: Hoard) => {
+    const history = [x, y];
 
+    return history;
+}

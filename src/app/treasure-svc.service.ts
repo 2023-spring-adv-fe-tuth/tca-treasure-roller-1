@@ -5,7 +5,9 @@ import {
     hoardItemValuesOnly, 
     HoardSetup,
     Hoard,
-    sellWholeHoard
+    sellWholeHoard,
+    initiateHistory,
+    collectHistory
  } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
@@ -45,10 +47,18 @@ export class TreasureSvcService {
 
   resultsTest: Hoard = dummyHoard;
 
+  historyTest: Hoard = otherHoard;
+
+  firstHistory = initiateHistory(this.resultsTest, this.historyTest);
+
+  aggregation: Hoard = thirdHoard;
+
   hoardSaleValuesOnly = () => hoardSaleValuesOnly(this.rolledTreasure);
   hoardItemValuesOnly = () => hoardItemValuesOnly(this.rolledTreasure);
   fullHoardValue = () => fullHoardValue(this.rolledTreasure);
   sellWholeHoard = () => sellWholeHoard(this.rolledTreasure);
+  initiateHistory = () => initiateHistory(this.resultsTest, this.historyTest);
+  collectHistory = () => collectHistory(this.firstHistory, this.aggregation)
 
 };
 
@@ -186,4 +196,62 @@ const dummyHoard: Hoard = {
     items: secondTreasure,
     totalValue: fullHoardValue(secondTreasure),
     totalSaleValue: sellWholeHoard(secondTreasure)
+}
+
+const otherHoard: Hoard = {
+    name: "Dragon's Lair",
+    timeStamp: "9-22-2022",
+    encounterLevel: 11,
+    items: treasureItems,
+    totalValue: fullHoardValue(treasureItems),
+    totalSaleValue: sellWholeHoard(treasureItems)
+}
+
+const thirdTreasure: Loot[]= [
+    {
+        itemName: "+1 Longsword",
+        itemValue: 2360,
+        saleValue: 1180,
+        notes: "+1 hit and damage"
+    },
+    {
+        itemName: "Silver Goblet",
+        saleValue: 150,
+        notes: "Solid silver inlaid with semiprecious stones"
+    },
+    {
+        itemName: "123 Gold Coins",
+        saleValue: 123,
+        notes: "A pile of gold coins"
+    },
+    {
+        itemName: "Uncut Sapphire",
+        saleValue: 3400,
+        notes: "A beautiful blue gem weighing about 1oz"
+    },
+    {
+        itemName: "Potion of Diminution",
+        saleValue: 0,
+        notes: "A small vial of greenish liquid - curses the drinker to be 6in tall!"
+    },
+    {
+        itemName: "Bracers of Armor +4",
+        itemValue: 16000,
+        saleValue: 8000,
+        notes: "A thin barrier of force protects the wearer like light armor."
+    },
+    {
+        itemName: "Scroll of Bull Strength",
+        itemValue: 150,
+        saleValue: 75,
+        notes: "Many people find it helpful to keep scrolls of utilitiy spells such as this, saving their memory for more powerful spells."
+    }
+]
+
+const thirdHoard : Hoard = {
+    name: "Troll's Den",
+    timeStamp: "4-14-1982",
+    items: thirdTreasure,
+    totalValue: fullHoardValue(thirdTreasure),
+    totalSaleValue: sellWholeHoard(thirdTreasure)
 }
