@@ -2,6 +2,7 @@ import { Hoard } from './../treasure-types';
 import { DisplayPlayer } from './../repl-type-definitions';
 import { TreasureSvcService } from './../treasure-svc.service';
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-home-screen',
   templateUrl: './home-screen.component.html',
@@ -10,8 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeScreenComponent implements OnInit {
 
   constructor(
-    private gameSvc: TreasureSvcService
+    private gameSvc: TreasureSvcService,
+    private modalService: NgbModal
   ) {}
+
+  public open(modal: any): void {
+    this.modalService.open(modal);
+  }
 
   leaderData: DisplayPlayer[] = [];
 

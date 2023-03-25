@@ -3,7 +3,9 @@ import {
     fullHoardValue,
     HoardSetup,
     Hoard,
-    sellWholeHoard
+    sellWholeHoard,
+    TreasureHistory,
+    forgeHistory
  } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
@@ -34,16 +36,12 @@ export class TreasureSvcService {
   constructor() { }
 
   grs: GameResult[] = gameResults3;
+  testH: Hoard[] = testHistory;
+  otherHoard: Hoard = thirdHoard;
 
   leaderboard = () => leaderboard(this.grs);
-  
-  setupTest: HoardSetup = dummySetup;
 
-  resultsTest: Hoard = dummyHoard;
-
-  historyTest: Hoard = otherHoard;
-
-  aggregation: Hoard = thirdHoard;
+  forgeHistory = () => forgeHistory(this.testH, this.otherHoard);
 
 };
 
@@ -233,10 +231,15 @@ const thirdTreasure: Loot[]= [
     }
 ]
 
-const thirdHoard : Hoard = {
+const thirdHoard: Hoard = {
     name: "Troll's Den",
     timeStamp: "4-14-1982",
     items: thirdTreasure,
     totalValue: fullHoardValue(thirdTreasure),
     totalSaleValue: sellWholeHoard(thirdTreasure)
 }
+
+const testHistory: Hoard[] = [
+    dummyHoard,
+    otherHoard
+]

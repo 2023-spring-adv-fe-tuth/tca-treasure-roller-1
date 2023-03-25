@@ -16,24 +16,22 @@
     *ngFor="let player of leaderData"
   >
     <div class="card-header">
-      <a class="btn" 
-        data-bs-toggle="collapse"
-        href="{{ player.name }}"
+      <button class="btn"
+        type="button"
+        (click)="basicCollapse.toggle()"
       >
         {{ player.name }}
-      </a>
+      </button>
     </div>
-    <div 
-      class="collapse show" 
-      data-bs-parent="fold"
-      id="{{ player.name }}"
-    >
-      <ul class="card-body ms-4">
+    
+      <ul class="card-body ms-4"
+        [id]="player.name"
+        mdbCollapse
+      >
         <li>Wins: {{ player.wins }} </li>
         <li>Losses: {{ player.losses }} </li>
         <li>Average: {{ player.avg }} </li>
       </ul>
-    </div>
   </div>
 </div>
 
