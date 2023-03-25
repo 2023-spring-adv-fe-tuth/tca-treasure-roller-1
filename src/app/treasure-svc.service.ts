@@ -51,11 +51,6 @@ export class TreasureSvcService {
 
   aggregation: Hoard = thirdHoard;
 
-  hoardSaleValuesOnly = () => hoardSaleValuesOnly(this.rolledTreasure);
-  hoardItemValuesOnly = () => hoardItemValuesOnly(this.rolledTreasure);
-  fullHoardValue = () => fullHoardValue(this.rolledTreasure);
-  sellWholeHoard = () => sellWholeHoard(this.rolledTreasure);
-
 };
 
 const treasureItems: Loot[] = [
