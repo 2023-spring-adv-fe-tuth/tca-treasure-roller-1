@@ -1,10 +1,16 @@
-<h2>Click the button to start building treasure</h2>
+<h2>Click the button to start building treasure.</h2>
 <button
-    class="btn btn-outline-success"
-    routerLink="/parameters-screen">
-    Roll New Treasure
+  class="btn btn-outline-success"
+  routerLink="/parameters-screen">
+  Roll New Treasure
 </button>
-<div id="fold">
+<h4
+  *ngIf="leaderData.length == 0"
+>You currently have no hoards. Click the button to start your collection.</h4>
+<div 
+  id="fold"
+  *ngIf="leaderData.length > 0"
+  >
   <div class="card">
     <div class="card-header">
       <a class="btn" 
