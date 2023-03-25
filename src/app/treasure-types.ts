@@ -30,10 +30,6 @@ export interface HoardSetup {
     timeStamp: string;
 }
 
-export type InitiateHistory = (result: Hoard) => Hoard[];
-
-export type FirstRoll = (roll: Loot) => Loot[];
-
 export type Encounter = (treasures: Loot[], next: Loot) => Loot[];
 
 export type TreasureHistory = (history: Hoard[], newTreasure: Hoard) => Hoard[];
@@ -57,20 +53,4 @@ export const sellWholeHoard = (items: Loot[]) => items.reduce(
     (acc, x) => acc + x.saleValue, 0
 );
 
-export const firstItem: FirstRoll = (item: Loot) => [item];
-
-// export const initialHoard: InitiateHistory = (x: Hoard) => [x];
-
-export const forgeHistory: TreasureHistory = (exists, add) => {
-    let history: Hoard[] = [];
-
-    if (!exists) {
-        history = [add];
-    } else {
-        history = [
-            ...exists,
-            add
-        ];
-    }
-    return history;
-}
+export const forgeHistory: TreasureHistory = (exists, add) => [...exists, add];

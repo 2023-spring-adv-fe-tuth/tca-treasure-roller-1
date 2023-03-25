@@ -1,4 +1,4 @@
-import { Hoard, TreasureHistory } from './../treasure-types';
+import { Hoard } from './../treasure-types';
 import { DisplayPlayer } from './../repl-type-definitions';
 import { TreasureSvcService } from './../treasure-svc.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,12 +15,11 @@ export class HomeScreenComponent implements OnInit {
 
   leaderData: DisplayPlayer[] = [];
 
-  treasureData: Hoard[] = [];
+  treasureHistory: Hoard[] = [];
 
   ngOnInit(): void {
     this.leaderData = this.gameSvc.leaderboard();
     console.log(this.leaderData);
     
-    // this.treasureData = this.gameSvc.
   }
 }

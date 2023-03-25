@@ -1,3 +1,5 @@
+import { TreasureSvcService } from './../treasure-svc.service';
+import { Encounter, Loot } from './../treasure-types';
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 
@@ -9,8 +11,10 @@ import { Location } from '@angular/common';
 
 export class ResultScreenComponent {
   constructor(
-    private location: Location
+    private location: Location,
+    private accrueTreasure: TreasureSvcService
   ) {};
+    encounterTreasure: Loot[] = [];
 
     saveTreasure = () => {
       this.location.historyGo(-2);

@@ -1,3 +1,4 @@
+import { TreasureSvcService } from './../treasure-svc.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 export class ParametersScreenComponent {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private svc: TreasureSvcService
   ) {};
 
   rollTreasure = () => {
