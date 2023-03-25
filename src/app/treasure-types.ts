@@ -1,3 +1,4 @@
+// import { initialHoard } from './treasure-types';
 export interface Loot {
     itemName: string;
     itemValue?: number;
@@ -29,7 +30,11 @@ export interface HoardSetup {
     timeStamp: string;
 }
 
-export type GatherHoard = (treasures: Loot[], next: Loot) => Loot[];
+export type InitiateHistory = (result: Hoard) => Hoard[];
+
+export type FirstRoll = (roll: Loot) => Loot[];
+
+export type Encounter = (treasures: Loot[], next: Loot) => Loot[];
 
 export type TreasureHistory = (history: Hoard[], newTreasure: Hoard) => Hoard[];
 
@@ -52,13 +57,6 @@ export const sellWholeHoard = (items: Loot[]) => items.reduce(
     (acc, x) => acc + x.saleValue, 0
 );
 
-export const collectHistory: TreasureHistory = (encounters, encounter) => [
-    ...encounters,
-    encounter
-];
+export const firstItem: FirstRoll = (item: Loot) => [item];
 
-export const initiateHistory = (x: Hoard, y: Hoard) => {
-    const history = [x, y];
-
-    return history;
-}
+// export const initialHoard: InitiateHistory = (x: Hoard) => [x];

@@ -6,8 +6,8 @@ import {
     HoardSetup,
     Hoard,
     sellWholeHoard,
-    initiateHistory,
-    collectHistory
+    Encounter,
+    InitiateHistory
  } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
@@ -49,16 +49,12 @@ export class TreasureSvcService {
 
   historyTest: Hoard = otherHoard;
 
-  firstHistory = initiateHistory(this.resultsTest, this.historyTest);
-
   aggregation: Hoard = thirdHoard;
 
   hoardSaleValuesOnly = () => hoardSaleValuesOnly(this.rolledTreasure);
   hoardItemValuesOnly = () => hoardItemValuesOnly(this.rolledTreasure);
   fullHoardValue = () => fullHoardValue(this.rolledTreasure);
   sellWholeHoard = () => sellWholeHoard(this.rolledTreasure);
-  initiateHistory = () => initiateHistory(this.resultsTest, this.historyTest);
-  collectHistory = () => collectHistory(this.firstHistory, this.aggregation)
 
 };
 
