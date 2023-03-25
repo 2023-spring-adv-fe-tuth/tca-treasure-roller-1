@@ -19,6 +19,8 @@ export class HomeScreenComponent implements OnInit {
 
   ngOnInit(): void {
     this.leaderData = this.gameSvc.leaderboard();
-    console.log(this.leaderData);   
+    console.log(this.leaderData);
+    
+    // this.treasureData = this.gameSvc.
   }
 }

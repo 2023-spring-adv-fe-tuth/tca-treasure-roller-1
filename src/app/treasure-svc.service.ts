@@ -1,13 +1,9 @@
 import { 
     Loot, 
-    hoardSaleValuesOnly, 
-    fullHoardValue, 
-    hoardItemValuesOnly, 
+    fullHoardValue,
     HoardSetup,
     Hoard,
-    sellWholeHoard,
-    Encounter,
-    InitiateHistory
+    sellWholeHoard
  } from './treasure-types';
 import { Injectable } from '@angular/core';
 import { 
@@ -40,8 +36,6 @@ export class TreasureSvcService {
   grs: GameResult[] = gameResults3;
 
   leaderboard = () => leaderboard(this.grs);
-
-  rolledTreasure: Loot[] = treasureItems;
   
   setupTest: HoardSetup = dummySetup;
 

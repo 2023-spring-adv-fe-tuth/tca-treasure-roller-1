@@ -60,3 +60,17 @@ export const sellWholeHoard = (items: Loot[]) => items.reduce(
 export const firstItem: FirstRoll = (item: Loot) => [item];
 
 // export const initialHoard: InitiateHistory = (x: Hoard) => [x];
+
+export const forgeHistory: TreasureHistory = (exists, add) => {
+    let history: Hoard[] = [];
+
+    if (!exists) {
+        history = [add];
+    } else {
+        history = [
+            ...exists,
+            add
+        ];
+    }
+    return history;
+}
