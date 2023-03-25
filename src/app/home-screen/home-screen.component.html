@@ -11,23 +11,27 @@
   id="fold"
   *ngIf="leaderData.length > 0"
   >
-  <div class="card">
+  <div 
+    class="card"
+    *ngFor="let player of leaderData"
+  >
     <div class="card-header">
       <a class="btn" 
         data-bs-toggle="collapse"
-        href="#treasureOne"
+        href="{{ player.name }}"
       >
-        Treasure 1
+        {{ player.name }}
       </a>
     </div>
     <div 
       class="collapse show" 
       data-bs-parent="fold"
-      id="treasureOne"
+      id="{{ player.name }}"
     >
       <ul class="card-body ms-4">
-        <li>item one</li>
-        <li>item 2</li>
+        <li>Wins: {{ player.wins }} </li>
+        <li>Losses: {{ player.losses }} </li>
+        <li>Average: {{ player.avg }} </li>
       </ul>
     </div>
   </div>
