@@ -18,15 +18,16 @@
     <div class="card-header">
       <button class="btn"
         type="button"
-        (click)="basicCollapse.toggle()"
+        (click)="collapse.toggle()"
       >
         {{ player.name }}
       </button>
     </div>
     
-      <ul class="card-body ms-4"
-        [id]="player.name"
-        mdbCollapse
+      <ul #collapse="ngbCollapse"
+        class="card-body ms-4"
+        id="{{player.name}}"
+        [(ngbCollapse)]="gfg"
       >
         <li>Wins: {{ player.wins }} </li>
         <li>Losses: {{ player.losses }} </li>

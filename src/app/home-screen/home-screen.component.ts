@@ -15,9 +15,11 @@ export class HomeScreenComponent implements OnInit {
     private modalService: NgbModal
   ) {}
 
-  public open(modal: any): void {
+  public open({ modal }: { modal: any; }): void {
     this.modalService.open(modal);
   }
+
+  public gfg = false;
 
   leaderData: DisplayPlayer[] = [];
 

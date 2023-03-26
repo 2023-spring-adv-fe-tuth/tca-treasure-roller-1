@@ -10,7 +10,7 @@ export class AppComponent {
 
 constructor(private modalService: NgbModal){}
 
-public open(modal: any): void{
+public open({ modal }: { modal: any; }): void {
   this.modalService.open(modal);
 }
 
