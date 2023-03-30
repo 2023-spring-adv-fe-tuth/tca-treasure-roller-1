@@ -24,11 +24,15 @@ export class TreasureSvcService {
   testH: Hoard[] = testHistory;
   otherHoard: Hoard = thirdHoard;
 
+// call functions from types file
   leaderboard = () => leaderboard(this.grs);
 
   forgeHistory = () => forgeHistory(this.testH, this.otherHoard);
 
 };
+
+// service maintains the information such as data arrays in the service instance
+// user does not have to interact directly... ?
 
 const gameResults3: GameResult[] = [
     {

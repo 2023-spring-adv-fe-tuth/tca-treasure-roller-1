@@ -9,8 +9,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./home-screen.component.css']
 })
 export class HomeScreenComponent implements OnInit {
-
+  
   constructor(
+    // scoped parameters in constructor for dependency injection
+    // import the types needed for these parameters
     private gameSvc: TreasureSvcService,
     private modalService: NgbModal
   ) {}
@@ -21,13 +23,15 @@ export class HomeScreenComponent implements OnInit {
 
   public gfg = false;
 
+  // create properties above ngOnInit and import any types
   leaderData: DisplayPlayer[] = [];
 
   treasureHistory: Hoard[] = [];
 
+  // OnInit function called when component ready to display
+  // such as when user navigates to this component
   ngOnInit(): void {
     this.leaderData = this.gameSvc.leaderboard();
-    console.log(this.leaderData);
-    
+    // console.log(this.leaderData); <-- test succeeded, no longer necessary    
   }
 }
