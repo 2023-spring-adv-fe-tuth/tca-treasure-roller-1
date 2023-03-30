@@ -3,8 +3,6 @@ export interface GameResult {
     players: string[];
 };
 
-export type GetPlayer = (results: GameResult[]) => string[];
-
 export interface DisplayPlayer {
     name: string;
     wins: number;
@@ -16,6 +14,7 @@ export type AddGame = (results: GameResult[], result: GameResult) => GameResult[
 
 export type LeaderCalculator = (results: GameResult[]) => DisplayPlayer[];
 
+export type GetPlayer = (results: GameResult[]) => string[];
 // add default implementations...
 
 export const getPlayerNames: GetPlayer = (grs) => {

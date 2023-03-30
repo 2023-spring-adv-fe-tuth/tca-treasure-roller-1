@@ -13,21 +13,6 @@ import {
   leaderboard
 } from './repl-type-definitions';
 
-const gameResults3: GameResult[] = [
-  {
-      winner: "Lord Glablok",
-      players: ["Lord Glablok", "Minion One"]
-  },
-  {
-      winner: "Minion One",
-      players: ["Minion Two", "Minion One"]
-  },
-  {
-      winner: "Lord Glablok",
-      players: ["Lord Glablok", "Coldshard", "Minion One", "Minion Two"]
-  }
-];
-
 @Injectable({
   providedIn: 'root'
 })
@@ -44,6 +29,21 @@ export class TreasureSvcService {
   forgeHistory = () => forgeHistory(this.testH, this.otherHoard);
 
 };
+
+const gameResults3: GameResult[] = [
+    {
+        winner: "Lord Glablok",
+        players: ["Lord Glablok", "Minion One"]
+    },
+    {
+        winner: "Minion One",
+        players: ["Minion Two", "Minion One"]
+    },
+    {
+        winner: "Lord Glablok",
+        players: ["Lord Glablok", "Coldshard", "Minion One", "Minion Two"]
+    }
+  ];
 
 const treasureItems: Loot[] = [
   {

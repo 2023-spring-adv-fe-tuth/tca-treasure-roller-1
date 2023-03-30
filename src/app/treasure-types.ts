@@ -1,17 +1,9 @@
-// import { initialHoard } from './treasure-types';
+// interfaces
 export interface Loot {
     itemName: string;
     itemValue?: number;
     saleValue: number;
     notes: string;
-};
-
-export type GetLoot = (rolls: Loot[]) => string[];
-
-export const getItemNames: GetLoot = (items) => {
-    const hoardItems = items.map(x => x.itemName);
-
-    return hoardItems;
 };
 
 export interface Hoard {
@@ -30,9 +22,21 @@ export interface HoardSetup {
     timeStamp: string;
 }
 
+// types
+
+export type GetLoot = (rolls: Loot[]) => string[];
+
 export type Encounter = (treasures: Loot[], next: Loot) => Loot[];
 
 export type TreasureHistory = (history: Hoard[], newTreasure: Hoard) => Hoard[];
+
+// functions
+
+export const getItemNames: GetLoot = (items) => {
+    const hoardItems = items.map(x => x.itemName);
+
+    return hoardItems;
+};
 
 export const hoardSaleValuesOnly = (items: Loot[]) => items.filter(
     x => x.itemValue === undefined).reduce(
@@ -54,3 +58,5 @@ export const sellWholeHoard = (items: Loot[]) => items.reduce(
 );
 
 export const forgeHistory: TreasureHistory = (exists, add) => [...exists, add];
+
+export const gatherHoard = (item: Loot) => 
