@@ -11,7 +11,8 @@ import { Injectable } from '@angular/core';
 import { 
   GameResult,
   leaderboard,
-  addGameResult
+  addGameResult,
+  getPlayerNames
 } from './repl-type-definitions';
 
 @Injectable({
@@ -25,19 +26,25 @@ export class TreasureSvcService {
   testH: Hoard[] = testHistory;
   otherHoard: Hoard = thirdHoard;
 
-// call functions from types file
   leaderboard = () => leaderboard(this.grs);
 
   forgeHistory = () => forgeHistory(this.testH, this.otherHoard);
 
   addGameResult = (adding: GameResult) => {
     this.grs = addGameResult(this.grs, adding);
-  }
+  };
+
+  getPlayerNames = () => getPlayerNames(this.grs);
+
+  setupInfo: {
+    start: string;
+    players: string[]
+  } = {
+    start: "",
+    players: []
+  };
 
 };
-
-// service maintains the information such as data arrays in the service instance
-// user does not have to interact directly... ?
 
 const gameResults3: GameResult[] = [
     {
