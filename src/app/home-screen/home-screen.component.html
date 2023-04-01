@@ -7,33 +7,20 @@
 <h4
   *ngIf="leaderData.length == 0"
 >You currently have no hoards. Click the button to start your collection.</h4>
-<div 
-  id="fold"
-  *ngIf="leaderData.length > 0"
-  >
-  <div 
-    class="card overflow-hidden"
-    *ngFor="let player of leaderData"
-  >
-    <div class="card-header">
-      <button class="btn"
-        type="button"
-        (click)="collapse.toggle()"
-      >
-        {{ player.name }}
-      </button>
-    </div>
-    
-      <ul #collapse="ngbCollapse"
-        class="card-body ms-4"
-        id="{{player.name}}"
-        [(ngbCollapse)]="gfg"
-      >
-        <li>Wins: {{ player.wins }} </li>
-        <li>Losses: {{ player.losses }} </li>
-        <li>Average: {{ player.avg }} </li>
-      </ul>
-  </div>
-</div>
 
-  
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0"
+  *ngIf="leaderData.length > 0"
+>
+  <ngb-panel *ngFor="let player of leaderData">
+    <ng-template ngbPanelTitle>
+      {{ player.name }}
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <ul>
+        <li>{{ player.wins }}</li>
+        <li>{{ player.losses }}</li>
+        <li>{{ player.avg }}</li>
+      </ul>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

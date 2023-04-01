@@ -2,7 +2,7 @@ import { Hoard } from './../treasure-types';
 import { DisplayPlayer } from './../repl-type-definitions';
 import { TreasureSvcService } from './../treasure-svc.service';
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-home-screen',
   templateUrl: './home-screen.component.html',
