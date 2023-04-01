@@ -2,7 +2,7 @@ import { Hoard } from './../treasure-types';
 import { DisplayPlayer } from './../repl-type-definitions';
 import { TreasureSvcService } from './../treasure-svc.service';
 import { Component, OnInit } from '@angular/core';
-import { NgbModal, NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-home-screen',
   templateUrl: './home-screen.component.html',
@@ -14,12 +14,7 @@ export class HomeScreenComponent implements OnInit {
     // scoped parameters in constructor for dependency injection
     // import the types needed for these parameters
     private gameSvc: TreasureSvcService,
-    private modalService: NgbModal
   ) {}
-
-  public open({ modal }: { modal: any; }): void {
-    this.modalService.open(modal);
-  }
 
   public gfg = false;
 
