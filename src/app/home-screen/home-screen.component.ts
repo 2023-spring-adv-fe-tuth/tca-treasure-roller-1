@@ -14,13 +14,14 @@ export class HomeScreenComponent implements OnInit {
     // import the types needed for these parameters
     private gameSvc: TreasureSvcService,
   ) {}
-  
+
   // create properties above ngOnInit and import any types
   leaderData: DisplayPlayer[] = [];
 
   treasureHistory: Hoard[] = [];
 
   ngOnInit(): void {
-    this.leaderData = this.gameSvc.leaderboard();   
+    this.leaderData = this.gameSvc.leaderboard();
+    this.treasureHistory = this.gameSvc.testH;
   }
 }

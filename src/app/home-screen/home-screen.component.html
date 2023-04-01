@@ -24,3 +24,28 @@
     </ng-template>
   </ngb-panel>
 </ngb-accordion>
+
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" 
+  *ngIf="treasureHistory.length > 0"
+>
+  <ngb-panel *ngFor="let hoard of treasureHistory">
+    <ng-template ngbPanelTitle>
+      {{ hoard.name }} -- {{ hoard.timeStamp }}
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <ul class="list-group">
+        <li class="list-group-item" *ngIf="hoard.budget">
+          Hoard Budget: {{ hoard.budget }}
+        </li>
+        <li class="list-group-item" *ngIf="hoard.encounterLevel">
+          Encounter Level: {{ hoard.encounterLevel }}</li>
+        <li class="list-group-item">
+          Total Hoard Value: {{ hoard.totalValue }}gp
+        </li>
+        <li class="list-group-item">
+          Hoard Sale Value: {{ hoard.totalSaleValue }}gp
+        </li>
+      </ul>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
