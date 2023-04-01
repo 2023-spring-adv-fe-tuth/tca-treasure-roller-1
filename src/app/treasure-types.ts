@@ -59,4 +59,4 @@ export const sellWholeHoard = (items: Loot[]) => items.reduce(
 
 export const forgeHistory: TreasureHistory = (exists, add) => [...exists, add];
 
-export const gatherHoard = (item: Loot) => 
+// export const gatherHoard = (item: Loot) => 
