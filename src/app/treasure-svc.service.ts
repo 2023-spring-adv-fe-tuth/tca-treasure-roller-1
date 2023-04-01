@@ -10,7 +10,8 @@ import {
 import { Injectable } from '@angular/core';
 import { 
   GameResult,
-  leaderboard
+  leaderboard,
+  addGameResult
 } from './repl-type-definitions';
 
 @Injectable({
@@ -28,6 +29,10 @@ export class TreasureSvcService {
   leaderboard = () => leaderboard(this.grs);
 
   forgeHistory = () => forgeHistory(this.testH, this.otherHoard);
+
+  addGameResult = (adding: GameResult) => {
+    this.grs = addGameResult(this.grs, adding);
+  }
 
 };
 

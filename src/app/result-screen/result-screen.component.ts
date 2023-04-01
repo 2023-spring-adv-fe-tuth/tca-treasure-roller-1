@@ -17,6 +17,10 @@ export class ResultScreenComponent {
     encounterTreasure: Loot[] = [];
 
     saveTreasure = () => {
+      this.accrueTreasure.addGameResult({
+        winner: "Foxswallow",
+        players: ["Foxswallow", "Minion One", "Minion Two"]
+      });
       this.location.historyGo(-2);
     };
 }
