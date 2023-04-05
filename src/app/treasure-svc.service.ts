@@ -28,7 +28,9 @@ export class TreasureSvcService {
 
   leaderboard = () => leaderboard(this.grs);
 
-  forgeHistory = () => forgeHistory(this.testH, this.otherHoard);
+  forgeHistory = (adding: Hoard) => {
+    this.testH = forgeHistory(this.testH, adding);
+  }
 
   addGameResult = (adding: GameResult) => {
     this.grs = addGameResult(this.grs, adding);

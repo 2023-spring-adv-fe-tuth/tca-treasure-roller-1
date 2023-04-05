@@ -12,15 +12,17 @@ import { Location } from '@angular/common';
 export class ResultScreenComponent {
   constructor(
     private location: Location,
-    private accrueTreasure: TreasureSvcService
+    private svc: TreasureSvcService
   ) {};
-    encounterTreasure: Loot[] = [];
+
+  addMe = this.svc.otherHoard;
 
     saveTreasure = () => {
-      this.accrueTreasure.addGameResult({
+      this.svc.addGameResult({
         winner: "Foxswallow",
         players: ["Foxswallow", "Minion One", "Minion Two"]
       });
+      this.svc.forgeHistory(this.addMe);
       this.location.historyGo(-2);
     };
 }
