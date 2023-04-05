@@ -8,13 +8,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { ResultScreenComponent } from './result-screen/result-screen.component';
 import { ParametersScreenComponent } from './parameters-screen/parameters-screen.component';
+import { HoardScreenComponent } from './hoard-screen/hoard-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeScreenComponent,
     ResultScreenComponent,
-    ParametersScreenComponent
+    ParametersScreenComponent,
+    HoardScreenComponent
   ],
   imports: [
     FormsModule,
