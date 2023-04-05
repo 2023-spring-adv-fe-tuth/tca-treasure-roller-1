@@ -10,12 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeScreenComponent implements OnInit {
   
   constructor(
-    // scoped parameters in constructor for dependency injection
-    // import the types needed for these parameters
     private gameSvc: TreasureSvcService,
   ) {}
 
-  // create properties above ngOnInit and import any types
   leaderData: DisplayPlayer[] = [];
 
   treasureHistory: Hoard[] = [];
