@@ -16,6 +16,7 @@ export class ResultScreenComponent {
   ) {};
 
   addMe = this.svc.otherHoard;
+  showMe = this.svc.itsTwo;
 
   saveTreasure = () => {
     this.svc.addGameResult({

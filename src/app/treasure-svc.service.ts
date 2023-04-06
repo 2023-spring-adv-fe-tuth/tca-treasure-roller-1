@@ -25,6 +25,7 @@ export class TreasureSvcService {
   grs: GameResult[] = gameResults3;
   testH: Hoard[] = testHistory;
   otherHoard: Hoard = thirdHoard;
+  itsTwo: Loot[] = secondTreasure;
 
   leaderboard = () => leaderboard(this.grs);
 
