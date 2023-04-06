@@ -17,6 +17,7 @@ export class ResultScreenComponent {
 
   addMe = this.svc.otherHoard;
   showMe = this.svc.itsTwo;
+  reRoll = this.svc.reroll;
 
   saveTreasure = () => {
     this.svc.addGameResult({
@@ -25,5 +26,9 @@ export class ResultScreenComponent {
     });
     this.svc.forgeHistory(this.addMe);
     this.location.historyGo(-2);
+  };
+
+  rerollTreasure = () => {
+    this.showMe = this.reRoll;
   };
 }

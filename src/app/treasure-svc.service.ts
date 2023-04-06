@@ -26,6 +26,7 @@ export class TreasureSvcService {
   testH: Hoard[] = testHistory;
   otherHoard: Hoard = thirdHoard;
   itsTwo: Loot[] = secondTreasure;
+  reroll: Loot[] = treasureItems;
 
   leaderboard = () => leaderboard(this.grs);
 
