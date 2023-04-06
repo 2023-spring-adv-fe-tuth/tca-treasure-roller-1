@@ -9,7 +9,12 @@ import { TreasureSvcService } from '../treasure-svc.service';
 })
 export class HoardScreenComponent {
   constructor (
-    private router: Location,
+    private loc: Location,
     private svc: TreasureSvcService
   ) {}
+
+  updateHoard = () => {
+    this.loc.historyGo(-1);
+  }
+  
 }

@@ -17,12 +17,12 @@ export class ResultScreenComponent {
 
   addMe = this.svc.otherHoard;
 
-    saveTreasure = () => {
-      this.svc.addGameResult({
-        winner: "Foxswallow",
-        players: ["Foxswallow", "Minion One", "Minion Two"]
-      });
-      this.svc.forgeHistory(this.addMe);
-      this.location.historyGo(-2);
-    };
+  saveTreasure = () => {
+    this.svc.addGameResult({
+      winner: "Foxswallow",
+      players: ["Foxswallow", "Minion One", "Minion Two"]
+    });
+    this.svc.forgeHistory(this.addMe);
+    this.location.historyGo(-2);
+  };
 }
