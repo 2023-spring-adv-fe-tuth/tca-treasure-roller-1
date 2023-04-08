@@ -52,3 +52,16 @@ export const sellWholeHoard = (items: Loot[]) => items.reduce(
 );
 
 export const forgeHistory: TreasureHistory = (exists, add) => [...exists, add];
+
+export const tstngRando = (charts: Loot[][]) => {
+    let makeRando = Math.floor(
+        Math.random() * charts.length);
+    let putsOut = charts[makeRando];
+    return putsOut;
+};
+
+export const seeNest = (chart: Loot[]) => {
+    let makeRando = Math.floor(Math.random() * 2);
+    let putOut = chart[makeRando];
+    return putOut;
+};
