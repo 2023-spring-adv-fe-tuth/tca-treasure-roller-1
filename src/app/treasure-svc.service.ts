@@ -607,12 +607,6 @@ const treasureItems: Loot[] = [
           notes: "Target is protected with DR 10/Adamantine, but it only absorbs up to 150 damage"
       }
   ]
-  interface Loot {
-      itemName: string;
-      itemValue?: number;
-      saleValue: number;
-      notes: string;
-  };
 
 const tstChrts = [
     armorItems, 
