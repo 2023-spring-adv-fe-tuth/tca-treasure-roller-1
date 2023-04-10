@@ -31,4 +31,5 @@ export class ParametersScreenComponent implements OnInit {
   rollTreasure = () => {
     this.router.navigateByUrl("result-screen");
   };
+
 }

@@ -40,12 +40,13 @@ export class TreasureSvcService {
 
   getPlayerNames = () => getPlayerNames(this.grs);
 
+  // this will be used when a game starts (for a game)
   setupInfo: {
-    start: string;
-    players: string[]
-  } = {
-    start: "",
-    players: []
+    start: string; // will be date
+    players: string[] // IMPORTANT to make this property a specific array type
+  } = { 
+    start: "", // initiate as empty string to put date in
+    players: [] // this will store player names
   };
 
 };
