@@ -9,7 +9,6 @@ import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { ResultScreenComponent } from './result-screen/result-screen.component';
 import { ParametersScreenComponent } from './parameters-screen/parameters-screen.component';
 import { HoardScreenComponent } from './hoard-screen/hoard-screen.component';
-import { DataEntryComponent } from './data-entry/data-entry.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { DataEntryComponent } from './data-entry/data-entry.component';
     ResultScreenComponent,
     ParametersScreenComponent,
     HoardScreenComponent,
-    DataEntryComponent
   ],
   imports: [
     FormsModule,
