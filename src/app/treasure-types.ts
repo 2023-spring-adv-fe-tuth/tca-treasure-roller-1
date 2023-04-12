@@ -66,3 +66,7 @@ export const seeNest = (chart: Loot[]) => {
     let putOut = chart[makeRando];
     return putOut;
 };
+
+export const sellingItems = () => {
+    
+}
