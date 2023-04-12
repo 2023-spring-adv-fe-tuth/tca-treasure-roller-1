@@ -19,6 +19,10 @@ export class ResultScreenComponent implements OnInit {
   showMe = this.svc.itsTwo;
   reRoll = this.svc.reroll;
 
+  rerollTreasure = () => {
+    this.showMe = this.reRoll;
+  };
+
   saveTreasure = () => {
     this.svc.addGameResult({
       winner: "Foxswallow",
@@ -26,10 +30,6 @@ export class ResultScreenComponent implements OnInit {
     });
     this.svc.forgeHistory(this.addMe);
     this.location.historyGo(-2);
-  };
-
-  rerollTreasure = () => {
-    this.showMe = this.reRoll;
   };
 
   extraPlayers: {
