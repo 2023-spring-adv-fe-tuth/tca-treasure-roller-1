@@ -1,35 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { TreasureSvcService } from '../treasure-svc.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hoard-screen',
   templateUrl: './hoard-screen.component.html',
-  styleUrls: ['./hoard-screen.component.css'],
+  styleUrls: ['./hoard-screen.component.css']
 })
-export class HoardScreenComponent implements OnInit {
-  visible = [false];
+export class HoardScreenComponent {
   constructor (
     private loc: Location,
-    private svc: TreasureSvcService,
-    private here: Router
+    private svc: TreasureSvcService
   ) {}
 
   showMe = this.svc.itsTwo;
-
-  
-
-  toggleCollapse = (i: number) => {
-    this.visible[i] = !this.visible[i];
-  }
   
   updateHoard = () => {
     this.loc.historyGo(-1);
-  }
-
-  ngOnInit(): void {
-    
   }
   
 }
