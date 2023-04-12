@@ -19,6 +19,10 @@ export class HoardScreenComponent implements OnInit {
     this.loc.historyGo(-1);
   }
 
+  // get saleTotal() {
+  //   return showMe
+  // }
+
   ngOnInit(): void {
     
   }
