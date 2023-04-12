@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { TreasureSvcService } from '../treasure-svc.service';
 
@@ -7,7 +7,7 @@ import { TreasureSvcService } from '../treasure-svc.service';
   templateUrl: './hoard-screen.component.html',
   styleUrls: ['./hoard-screen.component.css']
 })
-export class HoardScreenComponent {
+export class HoardScreenComponent implements OnInit {
   constructor (
     private loc: Location,
     private svc: TreasureSvcService
@@ -17,6 +17,10 @@ export class HoardScreenComponent {
   
   updateHoard = () => {
     this.loc.historyGo(-1);
+  }
+
+  ngOnInit(): void {
+    
   }
   
 }
