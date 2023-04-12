@@ -2,14 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { TreasureSvcService } from '../treasure-svc.service';
 import { Router } from '@angular/router';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-hoard-screen',
   templateUrl: './hoard-screen.component.html',
-  styleUrls: ['./hoard-screen.component.css'],  
-  standalone: true,
-  imports: [NgbCollapseModule],
+  styleUrls: ['./hoard-screen.component.css'],
 })
 export class HoardScreenComponent implements OnInit {
   visible = [false];

@@ -7,22 +7,25 @@
             <th scope="col">Remove Item</th>
         </tr>
     </thead>
-    <tbody  *ngFor="let item of showMe">
-        <tr>
-            <td><mark>{{item.itemName}}</mark></td>
-            <td>{{item.itemValue ? item.itemValue : "Sale item" }}</td>
-            <td>{{item.saleValue}}</td>
-            <td class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"> Sell Item 
-                </label>                
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                {{item.notes}}
-            </td>
-        </tr>
+    <tbody>
+        <ng-template *ngFor="let item of showMe">
+            <tr >
+                <td><mark>{{item.itemName}}</mark></td>
+                <td>{{item.itemValue ? item.itemValue : "Sale item" }}</td>
+                <td>{{item.saleValue}}</td>
+                <td class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Sell Item 
+                    </label>                
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    {{item.notes}}
+                </td>
+            </tr>
+        </ng-template>
+
     </tbody>
 </table>
 <button class="btn"
